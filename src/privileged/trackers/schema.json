@@ -1,0 +1,68 @@
+[
+  {
+    "namespace": "trackers",
+    "description": "checking for trackers",
+    "functions": [
+      {
+        "name": "init",
+        "type": "function",
+        "description": "init listener to listen for changes in trackers",
+        "async": true,
+        "parameters": []
+      }
+    ],
+    "events": [
+      {
+        "name": "onPageBeforeUnload",
+        "type": "function",
+        "description": "Before the page unloads, we send information about trackers and performance measures.",
+        "parameters": [
+          {"type": "integer", "name": "tabId", "minimum": 0},
+          {"type": "object", "name": "data"}
+        ]
+      },
+      {
+        "name": "onPageUnload",
+        "type": "function",
+        "description": "When the page unloads.",
+        "parameters": [
+          {"type": "integer", "name": "tabId", "minimum": 0}
+        ]
+      },
+      {
+        "name": "onIdentityPopupShown",
+        "type": "function",
+        "description": "The control center/identity popup was shown on this tab.",
+        "parameters": [
+          {"type": "integer", "name": "tabId", "minimum": 0}
+        ]
+      },
+      {
+        "name": "onReportBreakage",
+        "type": "function",
+        "description": "User reported breakage through the control center",
+        "parameters": [
+          {"type": "integer", "name": "tabId", "minimum": 0}
+        ]
+      },
+      {
+        "name": "onReload",
+        "type": "function",
+        "description": "This is called when we find a page that was reloaded.",
+        "parameters": [
+          {"type": "integer", "name": "tabId", "minimum": 0},
+          {"type": "string", "name": "etld"}
+        ]
+      },
+      {
+        "name": "onToggleException",
+        "type": "function",
+        "description": "The user has added or removed and exception for this page in tracking protection.",
+        "parameters": [
+          {"type": "integer", "name": "tabId", "minimum": 0},
+          {"type": "boolean", "name": "toggleValue"}
+        ]
+      }
+    ]
+  }
+]
